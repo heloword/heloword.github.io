@@ -33,7 +33,6 @@ ChromeBook，内置Chrome OS，我觉得还可以称之为“自带硬件的Chro
 这里主要备份一下使用Crouton安装好的新系统（基于Debian的Kali发行版）中可能遇到的问题以及解决方法：
 
 1. 中文乱码。
- 
   * 安装locales：` sudo apt-get install locales `
   * 配置locales：` sudo dpkg-reconfigure locales `
   * 在弹出的界面中选择所有以en_US和zh_CN开头的locales，然后选择默认的locales为en_US.UTF-8。（因为我默认使用英文系统）
@@ -44,14 +43,12 @@ ChromeBook，内置Chrome OS，我觉得还可以称之为“自带硬件的Chro
   * 参考[ Kali Rolling 解决中文乱码问题](http://blog.csdn.net/bleachswh/article/details/51419670)
 
 2. 安装中文输入法：
-   
    * 安装fcitx框架：` sudo apt-get install fcitx `
    * 在~/.config/i3/config中增加fcitx的启动：`exec --no-startup-id fcitx -d`
    * 在~/.xinitrc头部增加：
    `export GTK_IM_MODULE=fcitx `
    `export QT_IM_MODULE=fcitx `
    `export XMODIFIERS="@im=fcitx"`
-   
    * 若在终端执行fctix出现**/bin/dbus-launch terminated abnormally without any error message**的错误，则说明需要安装D-Bus，执行`sudo apt-get install dbus-x11`，这样fctix框架就可以启动了。
    * 安装google拼音：`sudo apt-get install fcitx-googlepinyin`
 
