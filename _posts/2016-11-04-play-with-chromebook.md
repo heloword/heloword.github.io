@@ -8,12 +8,12 @@ tags: play
 @(Marxico)
 
 
-##### 引子
+##### **引子**
 就在前天，自己之前辛辛苦苦海淘回来的Acer C720的屏幕裂了，虽然这个本配置不高，2955U的CPU，2G内存加32G的SSD，但是苦于目前手头又没有其它的电脑，于是只能“缝缝补补”了，希望再扛一段时间。淘宝了一圈，只发现了一家卖这款电脑屏幕的，于是简单跟店主了解之后下单。
 等了两天终于拿到屏幕，二话不说开始屏幕的拆换，Acer C720拆机比较简单，毕竟只是一台廉价的ChromeBook。拆机参考了油管的视频[Acer Chromebook C720 Cracked Screen Replacement Procedure](https://www.youtube.com/watch?v=yOjkMZR47AY)，只要手能动的基本拆换起来都没有什么问题。插上屏幕接口之后开机，屏幕不亮，还以为是电脑有毛病了，经过一番“置换变量”，最后发现是接口插的不够紧，又使劲插插解决问题。然后网上找了点纯色图片，检查了一下没有亮点和坏点，于是确认收货，大功告成。
 不过鉴于这个本不知道什么时候就会光荣牺牲，所以还是把以前配置的过程记录下来，以便于以后参考（说不定啥时候脑子一抽就买了个ChromeBook Pixel了呢）。
 
-##### 安装
+##### **安装**
 ChromeBook，内置Chrome OS，我觉得还可以称之为“自带硬件的Chrome”，不过当你进入开发者模式之后，新世界的大门将向你打开：
 
 1. 按住 Esc+F3 (Refresh)，然后按 Power，接着就会进入恢复模式。
@@ -29,18 +29,18 @@ ChromeBook，内置Chrome OS，我觉得还可以称之为“自带硬件的Chro
 `sudo sh ./crouton -r kali-rolling -t cli-extra -n kali -m http://mirrors.ustc.edu.cn/kali `
 3. 安装完成之后，如果不考虑桌面，我们就拥有了一个可以完整执行的Linux系统，可以通过` sudo startcli`进入。但是想安装桌面怎么办呢？由于必须在Chrome OS中用全局VPN才可以实现chroot内部的翻墙，所以这里对chroot采用hosts大法。通过替换已安装的Linux系统内的hosts文件，实现其对google的访问，也就避免了使用全局VPN。这里推荐一个[hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts)，下载之后可以直接在Chrome OS中直接替换`/usr/local/chroots/kali/etc/hosts`文件，然后在kali中就可以直接翻墙了。由于我需要安装i3wm，所以此时只需要执行`sudo sh ./crouton -u -n kali -t x11`安装x11服务就行了，不带有任何桌面，后续过程参考[Using i3 in crouton](https://github.com/dnschneid/crouton/wiki/i3) 。（如果想把chroot中的hosts换回来，那就在替换之前备份，之后再替换回原来的就行了）
 
-##### 配置（Linux）
+##### **配置（Linux）**
 这里主要备份一下使用Crouton安装好的新系统（基于Debian的Kali发行版）中可能遇到的问题以及解决方法：
 
 1. 中文乱码。
-  * 安装locales：` sudo apt-get install locales `
-  * 配置locales：` sudo dpkg-reconfigure locales `
-  * 在弹出的界面中选择所有以en_US和zh_CN开头的locales，然后选择默认的locales为en_US.UTF-8。（因为我默认使用英文系统）
-  * 安装中文字体：` sudo apt-get install fonts-wqy-microhei fonts-wqy-zenhei xfonts-wqy `
-  * 安装一些好看的英文字体（可选）：` sudo apt-get install fonts-inconsolata xfonts-terminus `
-  * 刷新字体缓存（可选）：fc-cache
-  * 查看已安装字体（可选）：fc-list
-  * 参考[ Kali Rolling 解决中文乱码问题](http://blog.csdn.net/bleachswh/article/details/51419670)
+   * 安装locales：` sudo apt-get install locales `
+   * 配置locales：` sudo dpkg-reconfigure locales `
+   * 在弹出的界面中选择所有以en_US和zh_CN开头的locales，然后选择默认的locales为en_US.UTF-8。（因为我默认使用英文系统）
+   * 安装中文字体：` sudo apt-get install fonts-wqy-microhei fonts-wqy-zenhei xfonts-wqy `
+   * 安装一些好看的英文字体（可选）：` sudo apt-get install fonts-inconsolata xfonts-terminus `
+   * 刷新字体缓存（可选）：fc-cache
+   * 查看已安装字体（可选）：fc-list
+   * 参考[ Kali Rolling 解决中文乱码问题](http://blog.csdn.net/bleachswh/article/details/51419670)
 
 2. 安装中文输入法：
    * 安装fcitx框架：` sudo apt-get install fcitx `
@@ -58,17 +58,17 @@ ChromeBook，内置Chrome OS，我觉得还可以称之为“自带硬件的Chro
    * 之后在相应的库名字后面增加:i386即可安装对应的32位版本
 
 4. IDA运行的问题：
-  * 查找缺失的依赖属于哪个库：`sudo dpkg -S libgthread-2.0.so.0`
-  * 安装对应的32位版本：`sudo apt-get install libglib2.0-0:i386`
-  * 可以使用以上两部解决所有的库依赖问题。
-  * 遇到QT的xcb错误：` sudo apt-get install libqt5gui5:i386`
-  * 参考[Error while loading shared libraries: libgthread-2.0.so.0](http://askubuntu.com/questions/427496/error-while-loading-shared-libraries-libgthread-2-0-so-0) 
+   * 查找缺失的依赖属于哪个库：`sudo dpkg -S libgthread-2.0.so.0`
+   * 安装对应的32位版本：`sudo apt-get install libglib2.0-0:i386`
+   * 可以使用以上两部解决所有的库依赖问题。
+   * 遇到QT的xcb错误：` sudo apt-get install libqt5gui5:i386`
+   * 参考[Error while loading shared libraries: libgthread-2.0.so.0](http://askubuntu.com/questions/427496/error-while-loading-shared-libraries-libgthread-2-0-so-0) 
  
 5. Java程序字体虚化问题：
-  * 可以通过设置环境变量解决，在**/etc/environment**中增加`export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd'`
-  * 参考[Java Runtime Environment fonts](https://wiki.archlinux.org/index.php/Java_Runtime_Environment_fonts)
+   * 可以通过设置环境变量解决，在**/etc/environment**中增加`export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd'`
+   * 参考[Java Runtime Environment fonts](https://wiki.archlinux.org/index.php/Java_Runtime_Environment_fonts)
 
 主要花时间解决的问题大概就这么多，还有一些应用的配置，比如i3wm和xterm什么的不在此列。
 
-##### 小结
+##### **小结**
 这篇文章的目的主要是备份自己的使用经历，方便下次使用时解决问题，如果恰巧也能给其他拥有chromebook的小伙伴一些帮助那就更好啦。
