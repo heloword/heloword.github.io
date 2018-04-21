@@ -2,10 +2,10 @@
 layout: post
 title: Play With ChromeBook
 date: 2016-11-04 00:00:00
-categories:
-- OS
-- Hardware
-tags: ChromeOS
+categories: OS
+tags: 
+- Linux
+- ChromeOS
 ---
 ##### **引子**
 就在前天，自己之前辛辛苦苦海淘回来的Acer C720的屏幕裂了，虽然这个本配置不高，2955U的CPU，2G内存加32G的SSD，但是苦于目前手头又没有其它的电脑，于是只能“缝缝补补”了，希望再扛一段时间。淘宝了一圈，只发现了一家卖这款电脑屏幕的，于是简单跟店主了解之后下单。
