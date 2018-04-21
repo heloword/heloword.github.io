@@ -1,6 +1,7 @@
 ---                                                                        
 layout: post
 title: Play With ChromeBook
+date: 2016-11-04
 categories:
 - os
 - hardware
