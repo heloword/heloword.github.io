@@ -1,13 +1,11 @@
 ---                                                                        
 layout: post
 title: Play With ChromeBook
-tags: play
+categories:
+- os
+- hardware
+tags: chromeos
 ---
-### Play With ChromeBook
-
-@(Marxico)
-
-
 ##### **引子**
 就在前天，自己之前辛辛苦苦海淘回来的Acer C720的屏幕裂了，虽然这个本配置不高，2955U的CPU，2G内存加32G的SSD，但是苦于目前手头又没有其它的电脑，于是只能“缝缝补补”了，希望再扛一段时间。淘宝了一圈，只发现了一家卖这款电脑屏幕的，于是简单跟店主了解之后下单。
 等了两天终于拿到屏幕，二话不说开始屏幕的拆换，Acer C720拆机比较简单，毕竟只是一台廉价的ChromeBook。拆机参考了油管的视频[Acer Chromebook C720 Cracked Screen Replacement Procedure](https://www.youtube.com/watch?v=yOjkMZR47AY)，只要手能动的基本拆换起来都没有什么问题。插上屏幕接口之后开机，屏幕不亮，还以为是电脑有毛病了，经过一番“置换变量”，最后发现是接口插的不够紧，又使劲插插解决问题。然后网上找了点纯色图片，检查了一下没有亮点和坏点，于是确认收货，大功告成。

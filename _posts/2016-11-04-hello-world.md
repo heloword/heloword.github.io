@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Hello World
-tags: test
+categories: Test
+tags: Test
 ---
-
 Hello, World!
 
