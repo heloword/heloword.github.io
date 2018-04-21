@@ -5,11 +5,11 @@
 
 # Site
 title: Play For Fun
-subtitle: nerv
-description: mobile
+subtitle: let's together
+description: focus on mobile security
 author: Gavin Liu
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
-language: zh-Hans
+language: en
 date_format: '%Y-%m-%d'
 
 # URL
@@ -78,7 +78,7 @@ plugins:
 favicon: /assets/favicon.ico
 
 # Set default keywords (Use a comma to separate)
-keywords: "Jekyll, NexT"
+keywords: "Android, Mobile, Security"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -118,11 +118,11 @@ index_with_subtitle: false
 menu:
   home: /
   categories: /categories/
-  about: /about/
   archives: /archives/
   tags: /tags/
+  about: /about/
   #sitemap: /sitemap.xml
-  #commonweal: /404.html
+  commonweal: /404.html
 
 
 # Enable/Disable menu icons.
@@ -134,12 +134,12 @@ menu_icons:
   enable: true
   #KeyMapsToMenuItemKey: NameOfTheIconFromFontAwesome
   home: home
-  about: user
   categories: th
-  schedule: calendar
-  tags: tags
   archives: archive
+  tags: tags
+  about: user
   sitemap: sitemap
+  schedule: calendar
   commonweal: heartbeat
 
 
